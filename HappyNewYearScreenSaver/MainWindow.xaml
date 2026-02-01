@@ -18,20 +18,20 @@
                 <BeginStoryboard>
                     <Storyboard>
                         <DoubleAnimation  Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.GradientStops)[1].Offset" 
-                                          To="0.3"
-                                          Duration="0:0:6"
+                                          To="{l:RND 0.2,0.6}"
+                                          Duration="{l:TimeDuration {l:RND 10, 20}}"
                                           AutoReverse="True"
                                           RepeatBehavior="Forever"
                                           EasingFunction="{StaticResource CubicEase}"/>
                         <DoubleAnimation  Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusX)" 
-                                         To="0.3"
-                                         Duration="0:0:2.7"
+                                           To="{l:RND 0.2,0.6}"
+                                          Duration="{l:TimeDuration {l:RND 5, 7}}"
                                         AutoReverse="True"
                                         RepeatBehavior="Forever"
                                         EasingFunction="{StaticResource CubicEase}"/>
                         <DoubleAnimation  Storyboard.TargetProperty="(Control.Background).(RadialGradientBrush.RadiusX)" 
-                                       To="0.5"
-                                       Duration="0:0:3.72"
+                                         To="{l:RND 0.2,0.6}"
+                                        Duration="{l:TimeDuration {l:RND 5, 7}}"
                                        AutoReverse="True"
                                       RepeatBehavior="Forever"
                                       EasingFunction="{StaticResource CubicEase}"/>
@@ -58,31 +58,29 @@
                     <GradientStop Color="Gray" Offset="-0.5"/>
                     <GradientStop Color="Gray" Offset="1.5"/>
                 </LinearGradientBrush>
-               </TextBlock.Foreground>
+            </TextBlock.Foreground>
             <TextBlock.Effect>
                 <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="2"/>
             </TextBlock.Effect>
-            
+
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
+                    <BeginStoryboard>
+                        <Storyboard>
                             <DoubleAnimation Storyboard.TargetProperty="(Control.Foreground).(LinearGradientBrush.GradientStops)[0].Offset"
                                            From="-0.5" To="1.5"
-                                              Duration="0:0:3"
+                                              Duration="{l:TimeDuration {l:RND 2,7 }}"
                                              AutoReverse="True"
                                             RepeatBehavior="Forever "
                                              EasingFunction="{StaticResource CubicEase}"/>
                             <DoubleAnimation Storyboard.TargetProperty="(Control.Effect).(DropShadowEffect.BlurRadius)"
-               From="5" To="7"
-                  Duration="0:0:5"
-                 AutoReverse="True"
-                RepeatBehavior="Forever "
-                 EasingFunction="{StaticResource CubicEase}"/>
-
+                                            From="{l:RND 2, 5}" To="{l:RND 7, 10}"
+                                            Duration="{l:TimeDuration {l:RND 3, 8 }}"
+                                           AutoReverse="True"
+                                           RepeatBehavior="Forever "
+                                           EasingFunction="{StaticResource CubicEase}"/>
                         </Storyboard>
-                        </BeginStoryboard>
-                    
+                    </BeginStoryboard>
                 </EventTrigger>
             </TextBlock.Triggers>
         </TextBlock>
